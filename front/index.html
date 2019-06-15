@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WR timer</title>
+    <script src="tnoodle.js"></script>
+    <script src="vue.js"></script>
+    <link rel="shortcut icon" href="cube.png">
+    <link rel="stylesheet" href="pc.css">
+</head>
+
+<body>
+    <div id="timer">
+        <aside><h2>{{type}}</h2>
+            <h1>最快：{{fast['default']}}</h1>
+            <h1>滚动5组平均:{{ao5}}</h1>
+            <ul> 
+                <li v-for='t in selectedScore' :title="t.scramble">{{t.score}}</li>
+            </ul>
+
+        </aside>
+        <section>
+            <div id="src">
+                <h1>{{type}}</h1>
+                <h2>{{scr}}</h2>
+            </div>
+            <div :class="color">{{time}}</div>
+        </section>
+        <footer>
+             <div @click="by('333')">三阶</div>
+             <div @click="by('444')">四阶</div>
+             <div @click="by('555')">五阶</div>
+             <div @click="by('666')">六阶</div>
+             <div @click="by('777')">七阶</div>
+             <div @click="by('pyram')">金字塔</div>
+             <div @click="by('sq1')" title="打乱极慢约半分钟且打乱过程页面无法渲染">SQ-1</div>
+             <div @click="by('minx')">五魔方</div>
+             <div @click="by('skewb')">斜转</div>
+
+             
+        </footer>
+    </div>
+
+</body>
+<script src="timer.js"></script>
+</html>
+
